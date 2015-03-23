@@ -91,7 +91,65 @@
     <script type="text/template" class="create-second-review-view">
       <h2> <%= name %> </h2>
       <img src="<%= image %>">
-      <h1>Second Review</h1>
+
+      <h1>Edit First Review</h1>
+
+      <div class="first-review">
+            <div class="full-review-reviewer">
+              By: <%= reviewer %>
+            </div>
+
+            <span>
+              <%= reviewOne %>
+            </span>
+
+            <% if (this.model.get('imageOne') == undefined) { %>
+              <span></span>
+            <% } else { %>
+              <div class="image-container">
+                <img src="<%=imageOne%>">
+                <p><%=captionOne%></p>
+              </div>
+            <% } %>
+
+            <span>
+              <%= reviewTwo %>
+            </span>
+
+            <% if (this.model.get('imageTwo') == undefined) { %>
+              <span></span>
+            <% } else { %>
+              <div class="image-container">
+                <img src="<%=imageTwo%>">
+                <p><%=captionTwo%></p>
+              </div>
+            <% } %>
+
+            <span>
+              <%= reviewThree %>
+            </span>
+
+            <% if (this.model.get('imageThree') == undefined) { %>
+              <span></span>
+            <% } else { %>
+              <div class="image-container">
+                <img src="<%=imageThree%>">
+                <p><%=captionThree%></p>
+              </div>
+            <% } %>
+
+            <span>
+              <%=reviewFour%>
+            </span>
+
+            <div class="review-score">
+              <%= score %>
+            </div>
+            <button class="edit">EDIT</button>
+          </div>
+
+
+      <h1>Create Second Review</h1>
 
       <textarea class="review-content" placeholder="1st Paragraph"></textarea>
 

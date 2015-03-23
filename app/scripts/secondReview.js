@@ -9,7 +9,8 @@ var CreateSecondReviewView = Parse.View.extend({
 	template: _.template($('.create-second-review-view').text()),
 
 	events: {
-		'click button'       : 'finishedEdit',
+		'click .edit'        : 'edit',
+		'click .create'      : 'finishedEdit',
 		"click .image-one"   : "addImageOne",
 		"click .image-two"   : "addImageTwo",
 		"click .image-three" : "addImageThree",
@@ -25,6 +26,10 @@ var CreateSecondReviewView = Parse.View.extend({
 		var renderTemplate = this.template(this.model.attributes)
 		this.$el.html(renderTemplate);
 		return this;
+	},
+
+	edit: function() {
+		console.log("cool")
 	},
 
 	addImageOne: function() {
