@@ -29,7 +29,28 @@ var CreateSecondReviewView = Parse.View.extend({
 	},
 
 	edit: function() {
-		console.log("cool")
+		var model = this.model;
+		var quickReview = $('.edit-quick-review').val();
+		var reviewOne = $('.edit-review-one').val();
+		var reviewTwo = $('.edit-review-two').val();
+		var reviewThree = $('.edit-review-three').val();
+		var reviewFour = $('.edit-review-four').val();
+		var captionOne = $('.edit-caption-one').val();
+		var captionTwo = $('.edit-caption-two').val();
+		var captionThree = $('.edit-caption-three').val();
+
+		model.set('quickReview', quickReview);
+		model.set('reviewOne', reviewOne);
+		model.set('reviewTwo', reviewTwo);
+		model.set('reviewThree', reviewThree);
+		model.set('reviewFour', reviewFour);
+		model.set('captionOne', captionOne);
+		model.set('reviewTwo', reviewTwo);
+		model.set('reviewThree', reviewThree);
+
+		model.save(null,
+			alert("you changed that shit!!!!")
+		);
 	},
 
 	addImageOne: function() {
@@ -81,7 +102,6 @@ var CreateSecondReviewView = Parse.View.extend({
 		model.set('secondImageTwo', secondImageTwo);
 		model.set('secondImageThree', secondImageThree);
 		model.set('secondScore', secondScore);
-		console.log('cool')
 
 		model.save(null, {
 			success: function(){

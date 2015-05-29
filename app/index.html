@@ -32,6 +32,9 @@
     <div class="views-container"></div>
 
     <script type="text/template" class="create-review-view">
+    <div>
+      <img class="learn" src="images/learn.png">
+    </div>
       <div> 
         <h1>First Review</h1>
         <div class="checkbox">
@@ -95,60 +98,62 @@
       <h1>Edit First Review</h1>
 
       <div class="first-review">
-            <div class="full-review-reviewer">
-              By: <%= reviewer %>
-            </div>
+        <div class="full-review-reviewer">
+          By: <%= reviewer %>
+        </div>
 
-            <span>
-              <%= reviewOne %>
-            </span>
+        <textarea class="edit-quick-review" type="text"><%=quickReview%>
+        </textarea>
 
-            <% if (this.model.get('imageOne') == undefined) { %>
-              <span></span>
-            <% } else { %>
-              <div class="image-container">
-                <img src="<%=imageOne%>">
-                <p><%=captionOne%></p>
-              </div>
-            <% } %>
+        <textarea class="edit-review-one" type="text"><%=reviewOne%>
+        </textarea>
 
-            <span>
-              <%= reviewTwo %>
-            </span>
-
-            <% if (this.model.get('imageTwo') == undefined) { %>
-              <span></span>
-            <% } else { %>
-              <div class="image-container">
-                <img src="<%=imageTwo%>">
-                <p><%=captionTwo%></p>
-              </div>
-            <% } %>
-
-            <span>
-              <%= reviewThree %>
-            </span>
-
-            <% if (this.model.get('imageThree') == undefined) { %>
-              <span></span>
-            <% } else { %>
-              <div class="image-container">
-                <img src="<%=imageThree%>">
-                <p><%=captionThree%></p>
-              </div>
-            <% } %>
-
-            <span>
-              <%=reviewFour%>
-            </span>
-
-            <div class="review-score">
-              <%= score %>
-            </div>
-            <button class="edit">EDIT</button>
+        <% if (this.model.get('imageOne') == undefined) { %>
+          <span></span>
+        <% } else { %>
+          <div class="image-container">
+            <img src="<%=imageOne%>">
+            <input class="edit-caption-one" value="<%=captionOne%>">
           </div>
+        <% } %>
 
+        <textarea class="edit-review-two">
+          <%= reviewTwo %>
+        </textarea>
 
+        <% if (this.model.get('imageTwo') == undefined) { %>
+          <span></span>
+        <% } else { %>
+          <div class="image-container">
+            <img src="<%=imageTwo%>">
+            <input class="edit-caption-two" value="<%=captionTwo%>"></input>
+          </div>
+        <% } %>
+
+        <textarea class="edit-review-three">
+          <%= reviewThree %>
+        </textarea>
+
+        <% if (this.model.get('imageThree') == undefined) { %>
+          <span></span>
+        <% } else { %>
+          <div class="image-container">
+            <img src="<%=imageThree%>">
+            <input class="edit-caption-three" value="<%=captionThree%>"></input>
+          </div>
+        <% } %>
+
+        <textarea class="edit-review-four">
+          <%=reviewFour%>
+        </textarea>
+
+        <div class="review-score">
+          <%= score %>
+        </div>
+        <button class="edit">EDIT</button>
+      </div>
+
+<!-- /////////////////////////////////////////////////////////// -->
       <h1>Create Second Review</h1>
 
       <textarea class="review-content" placeholder="1st Paragraph"></textarea>
